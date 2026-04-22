@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-12">
+            <app-hero></app-hero>
+        </div>
+
+        <div class="col-2 main">
+            <app-aside (searchChanged)="searchText = $event" (categoryChanged)="selectedCategoryID = $event">
+            </app-aside>
+        </div>
+
+        <div class="col-10 main">
+            <app-vehicles [searchText]="searchText" [selectedCategoryID]="selectedCategoryID">
+            </app-vehicles>
+        </div>
+        <div class="col-12">
+            <app-footer></app-footer>
+        </div>
+
+    </div>
+</div>

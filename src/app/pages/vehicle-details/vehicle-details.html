@@ -1,0 +1,61 @@
+@if (vehicle) {
+  <div class="container pdp-wrapper mt-5 w-50">
+    <div class="row align-items-center shadow-lg rounded-4 overflow-hidden bg-white">
+
+      <!-- Vehicle Image -->
+      <div
+        class="col-md-6 p-0 d-flex align-items-center justify-content-center"
+        style="min-height: 400px"
+      >
+        <img
+          [src]="vehicle.images[0]"
+          class="img-fluid product-zoom ms-5 my-3 rounded-5"
+          alt="{{ vehicle.title }}"
+        />
+      </div>
+
+      <!-- Vehicle Info -->
+      <div class="col-md-6 p-5">
+
+        <h2 class="display-5 fw-bold text-dark">{{ vehicle.title }}</h2>
+
+        <h3 class="text-primary fw-bold mb-4 price-tag">
+          {{ vehicle.price | currency:'USD' }}
+        </h3>
+
+        <div class="product-meta mb-4 p-3 bg-light rounded-3">
+          <p class="mb-2">
+            <strong>Category:</strong>
+            <span class="text-secondary">{{ categoryName }}</span>
+          </p>
+          
+          <p class="mb-2 text-muted">
+            {{ vehicle.description }}
+          </p>
+
+          <p class="mb-0">
+            <strong>Availability:</strong>
+
+            @if (!vehicle.Quantity || vehicle.Quantity === 0) {
+              <span class="badge bg-danger">Out of Stock</span>
+            } @else if (vehicle.Quantity <= 2) {
+              <span class="badge bg-warning text-dark">
+                Last {{ vehicle.Quantity }}
+              </span>
+            } @else {
+              <span class="badge bg-success">
+                {{ vehicle.Quantity }} Available
+              </span>
+            }
+          </p>
+        </div>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <button routerLink="/" class="btn btn-outline-secondary btn-lg px-4 rounded-pill">
+             Back
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+}

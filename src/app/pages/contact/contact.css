@@ -1,0 +1,36 @@
+.contact-page {
+  min-height: 100vh;              
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.6)
+  ),
+  url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu67SqurFAiCOLLkphH2DrcxB7MQ0HK9OyWRoRFgnesQ&s&ec=121633969");
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contact-container {
+  width: 100%;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.btn-contact {
+  background-color: #6f4c35;
+  color: white;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-contact:hover {
+  background-color: #e65c00;
+}

@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary text-white ">
+  <div class="container-fluid text-white">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-white ">
+        <li class="nav-item">
+          <img [src]="store.Logo" alt="" class="img-fluid rounded-circle" style="width: 50px;">
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">  </a>
+        </li> -->
+        <li class="nav-item pt-2 ps-2 text-dark">
+          <h4>{{ store.Name }}</h4>
+        </li>
+        <li class="nav-item">
+          <!-- <a class="nav-link active" aria-current="page" href="#">{{ store.Name }}</a> -->
+        </li>
+
+        <li class="nav-item dropdown pt-2 px-3 pr-2">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            OUR OWNERS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">{{ StoreOwner[0] }}</a></li>
+            <li><a class="dropdown-item" href="#">{{ StoreOwner[1] }}</a></li>
+          </ul>
+        </li>
+
+
+
+        <!-- <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li> -->
+      </ul>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-white ">
+        <li class="nav-item pt-2 ps-2 pl-5 px-2">
+          <a class="nav-link " routerLink="/" routerLinkActive="active">HOME </a>
+        </li>
+        <li class="nav-item pt-2 ps-2 px-2 ">
+          <a class="nav-link " routerLink="/contact" routerLinkActive="active">CONTACT US </a>
+        </li>
+        <li class="nav-item pt-2 ps-2 px-2">
+          <a class="nav-link " routerLink="/about" routerLinkActive="active">ABOUT US </a>
+        </li>
+        <li class="nav-item pt-2 ps-2 px-2">
+          <a class="nav-link " routerLink="/search-products" routerLinkActive="active">SEARCH </a>
+        </li>
+      </ul>
+      <div class="d-flex" *ngIf="!authService.isLoggedIn()">
+        <li class="nav-item ms-lg-3">
+          <a class="btn btn-register" routerLink="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-register" routerLink="/register">Register</a>
+        </li>
+      </div>
+      <div class="d-flex" *ngIf="authService.isLoggedIn()">
+        <li class="nav-item ms-lg-3">
+          <button class="btn btn-danger" (click)="onLogout()">Logout</button>
+        </li>
+      </div>
+      <!-- <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+        <button class="btn btn-secondary" type="submit">Search</button>
+      </form> -->
+    </div>
+  </div>
+</nav>

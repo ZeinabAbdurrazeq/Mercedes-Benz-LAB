@@ -1,0 +1,57 @@
+
+<div class="container-fluid">
+
+  <div class="row mt-5 me-4 ms-4 justify-content-center">
+        
+  @for (product of filteredProducts; track product.id) {
+
+    <div class="col-lg-4 g-3  col-md-5 col-sm-12 mb-4">
+
+        <div class="card h-100 shadow-sm" [ngClass]="{ 'low-stock': product.Quantity === 1 }">
+            
+            <img [src]="product.images[0]" class="card-img-top" 
+             style="height:200px; object-fit:cover;" />
+
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ product.title }}</h5>
+          
+          <p>Price: {{ product.price | currency:'USD' }}</p>
+          
+          @switch (product.Quantity) {
+            @case (0) {
+              <span class="text-danger fw-bold">Out of Stock</span>
+            }
+            @case (1) {
+              <span class="text-warning">Last item</span>
+            }
+            @case (2) {
+              <span class="text-warning">Last 2 items</span>
+            }
+            @default {
+              <span class="text-success">In Stock</span>
+            }
+          }
+
+          <br />
+          <div class="mt-2">
+              <button class="btn btn-primary me-2" (click)="buy(product)" [disabled]="product.Quantity == 0">
+                    Buy
+                </button>
+                
+            <button class="btn btn-outline-secondary"[routerLink]="['/vehicle', product.id]">
+              Details
+            </button>
+          </div>
+        </div>
+    </div>
+    
+</div>
+}@empty {
+      <p class="fs-5 text-danger text-center bg-dark-subtle py-5">Products Not Found.</p>
+   }
+
+</div>
+
+
+</div>
+

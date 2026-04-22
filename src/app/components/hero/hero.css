@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.hero {
+  min-height: 93vh;
+  background: #618ab3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 5rem;
+  background-image: url('../../../../public/assets/wall.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* .hero {
+  position: relative;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background: url('./images/switch.jpg') center/cover no-repeat;
+  background: url('./images/patchpanel.jpg') center/cover no-repeat;
+  background: url('./images/cable.jpg') center/cover no-repeat;
+  overflow: hidden;
+} */
+
+/* .hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+} */
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  padding: 20px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: rgb(246, 251, 253);
+  /* background-color: #818385; */
+  animation: fadeInDown 1.2s;
+}
+.hero-content p {
+  font-size: 1.5rem;
+  color: rgb(124, 124, 68);
+  margin-bottom: 25px;
+  animation: fadeInUp 1.2s;
+}

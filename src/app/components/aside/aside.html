@@ -1,0 +1,135 @@
+<div class="Container">
+    <div class="row d-flex mt-5 ms-3">
+        <div class="col-12 ">
+            <div class="row">
+                <h4 class="heading mt-2">Search For:</h4>
+                <form class="d-flex my-3" role="search">
+                    <input class="form-control me-2" name="searchText" type="search" placeholder="Search"
+                        aria-label="Search" [(ngModel)]="searchText" (input)="onSearch()" />
+                    <!-- <button class="btn btn-secondary" type="submit">Search</button> -->
+                </form>
+                <h4 class="heading">Filtering based on:</h4>
+                <div class="col-10 m-3 mt-10">
+                    <div id="list-example" class="list-group">
+                        <h5 class="categ">Category</h5>
+                        @for (cat of categories; track cat.id) {
+                          <a class="list-group-item list-group-item-action" (click)="selectCategory(cat.id)">
+                            {{ cat.name }}
+                          </a>
+                        }
+                    </div>
+                </div>
+
+                <div class="col-10 m-3 mt-10">
+                    <h4 class="categ">Price</h4>
+                    <div id="list-example" class="list-group">
+                        <a class="list-group-item list-group-item-action" href="#list-item-1">Less than 1M</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-2">In range: 1M - 2M</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-3">In range: 2M - 3M</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-4">In range: 3M - 5M</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-3">More than 5M</a>
+                    </div>
+                </div>
+
+                <div class="col-10 m-3 mt-10">
+                    <h4 class="categ">Color:</h4>
+                    <div id="list-example" class="list-group">
+                        <a class="list-group-item list-group-item-action" href="#list-item-1">White</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-2">Rose Gold</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-3">Black</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-4">Silver</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-1">pink</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-2">Gray</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-3">Red</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-4">Blue</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-2">Orange</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-3">Black</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-4">Silver</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-1">purple</a>
+                    </div>
+                </div>
+                <!-- <div class="col-8">
+                    <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
+                        class="scrollspy-example" tabindex="0">
+                        <h4 id="list-item-1">Item 1</h4>
+                        <p>...</p>
+                        <h4 id="list-item-2">Item 2</h4>
+                        <p>...</p>
+                        <h4 id="list-item-3">Item 3</h4>
+                        <p>...</p>
+                        <h4 id="list-item-4">Item 4</h4>
+                        <p>...</p>
+                    </div>
+                </div> -->
+            </div>
+
+            <!-- <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspyHeading1">First</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspyHeading2">Second</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">Dropdown</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
+                            <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+                data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+                <h4 id="scrollspyHeading1">First heading</h4>
+                <p>...</p>
+                <h4 id="scrollspyHeading2">Second heading</h4>
+                <p>...</p>
+                <h4 id="scrollspyHeading3">Third heading</h4>
+                <p>...</p>
+                <h4 id="scrollspyHeading4">Fourth heading</h4>
+                <p>...</p>
+                <h4 id="scrollspyHeading5">Fifth heading</h4>
+                <p>...</p>
+            </div> -->
+        </div>
+
+        <!-- <div class="col-12 m-6">
+            <div class="dropdown-center">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Filter by Price
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Action two</a></li>
+                    <li><a class="dropdown-item" href="#">Action three</a></li>
+                </ul>
+            </div>
+
+        </div> -->
+    </div>
+    <div class="col-10 m-3 mt-4">
+        <h4 class="categ">Payment Info</h4>
+
+        <div class="card p-3 shadow-sm">
+            <p>
+                <strong>Today:</strong>
+                {{ today | date:'fullDate' }}
+            </p>
+
+            <p>
+                <strong>Card:</strong>
+                {{ creditCard | creditCard }}
+            </p>
+        </div>
+        <app-clock></app-clock>
+    </div>
+</div>

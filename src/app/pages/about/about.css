@@ -1,0 +1,55 @@
+:host {
+  display: block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Mercedes standard */
+  background: #fff;
+  color: #000;
+}
+
+/* Typography & Layout */
+.navbar { padding: 30px 0; border-bottom: 1px solid #000; }
+.navbar-brand { font-weight: 800; letter-spacing: 6px; font-size: 1.2rem; }
+.nav-link { font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; }
+
+.hero-section { padding: 100px 0; }
+.display-1 { 
+  font-weight: 200; /* Thin luxury weight */
+  font-size: 6rem; 
+  letter-spacing: -2px;
+}
+.sub-header { font-size: 1.2rem; font-weight: 300; }
+
+/* Editorial Structure */
+.eyebrow { 
+  font-size: 0.6rem; 
+  letter-spacing: 4px; 
+  font-weight: 800; 
+  display: block; 
+  margin-bottom: 20px; 
+}
+
+.content-block p { 
+  font-size: 1.1rem; 
+  line-height: 1.8; 
+  font-weight: 300; 
+}
+
+.large-text { font-size: 2rem !important; font-weight: 300; }
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  border-top: 1px solid #000;
+  padding-top: 30px;
+}
+
+.offer-item {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+/* Footer Minimalist */
+.footer-line { border-top: 1px solid #000; margin-bottom: 20px; }
+.copyright { font-size: 0.6rem; letter-spacing: 3px; font-weight: 800; }
